@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { matchPath } from 'react-router'
 import { TransitionGroup } from 'react-transition-group'
 
-export default function TransitionSwitch(props, context) {
-  const { route } = context.router
+export const Switch = (props, context) => {
+  const { router: { route } } = context
   const { children, transition: commonTransition, location: propLocation, ...rest } = props
   const location = propLocation || route.location
 
@@ -37,12 +37,12 @@ export default function TransitionSwitch(props, context) {
   })
 
   const renderable = !!(child && (
-    child.props.component ||
-    child.props.render ||
-    child.props.children
+    child.props.component
+    || child.props.render
+    || child.props.children
   ))
 
-  const clone = cloneElement(child, {
+  const clone = child && cloneElement(child, {
     location,
     computedMatch: match,
   })
@@ -53,21 +53,21 @@ export default function TransitionSwitch(props, context) {
     <Fragment>
       { !!match && !renderable && clone }
       <TransitionGroup appear={false} exit={false} {...rest}>
-        { !!match && renderable &&
-          createElement(transition, { key }, (<div>{ clone }</div>))
-        }
+        { !!match && renderable && (
+          createElement(transition, { key }, clone)
+        ) }
       </TransitionGroup>
     </Fragment>
   )
 }
 
-TransitionSwitch.contextTypes = {
+Switch.contextTypes = {
   router: PropTypes.shape({
     route: PropTypes.object.isRequired
   }).isRequired
 }
 
-TransitionSwitch.propTypes = {
+Switch.propTypes = {
   children: PropTypes.node,
   location: PropTypes.object,
   transition: PropTypes.oneOfType([
