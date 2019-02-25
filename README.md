@@ -1,8 +1,8 @@
 # react-router-transition-group
 
-## Transitions for react-router 
-
 [![npm](https://img.shields.io/npm/v/react-router-transition-group.svg)](https://www.npmjs.com/package/react-router-transition-group)
+
+Transitions for react-router.
 
 ## Installation
 
@@ -12,8 +12,8 @@ npm install react-router-transition-group
 
 ## Demo
 
-https://fakundo.github.io/react-router-transition-group/
-
+[Demo](https://fakundo.github.io/react-router-transition-group/)
+/
 [Source](https://github.com/fakundo/react-router-transition-group/tree/master/examples)
 
 ## Usage
