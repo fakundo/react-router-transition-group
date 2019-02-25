@@ -8,9 +8,11 @@
   ],
   "scripts": {
     "dev": "webpack-dev-server --progress --open --config webpack.config.development.js",
-    "lint": "eslint src && eslint examples",
     "docs": "webpack --progress --config webpack.config.docs.js",
-    "build": "rimraf lib && babel src -d lib && yarn run docs",
+    "lint": "eslint src && eslint examples",
+    "clean": "rimraf lib",
+    "compile": "NODE_ENV=commonjs babel src -d lib",
+    "build": "npm run clean && npm run compile && npm run docs",
     "prepublishOnly": "yarn run lint && yarn run build"
   },
   "keywords": [
