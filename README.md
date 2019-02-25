@@ -24,7 +24,7 @@ https://fakundo.github.io/react-router-transition-group/
 
 ```javascript
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { Switch } from 'react-router-transition-group'
 
 import MyTransition from 'components/MyTransition'
