@@ -1,6 +1,6 @@
 {
   "name": "react-router-transition-group",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Transitions for react-router",
   "main": "lib/index.js",
   "files": [
