@@ -21,7 +21,7 @@ npm install react-router-transition-group
 - Add `transition` property to `Switch` component
 - You also can override `transition` for each `Route` component
 - `transition` is a Transition component from `react-transition-group`
-- To disable transitions between some routes, you can group them (`Route` components) by passing the same `transitionKey` property to each
+- To disable transitions between some routes, you can group them by passing the same `transitionKey` property to `Route` component
 
 ```javascript
 import React from 'react'
